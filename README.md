@@ -28,7 +28,7 @@ npm run build --report
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 
-#目录说明
+##目录说明
 
 #./src/assets/  存放临时静态资源，不会参与编译 
 
