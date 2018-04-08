@@ -1,5 +1,5 @@
 # vuejs_web_pc
-a pc web project based on vue.js2.*
+a pc admin web project based on vue.js2.*
 
 # y
 
