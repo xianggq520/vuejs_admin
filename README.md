@@ -1,9 +1,8 @@
 # vuejs_web_pc
 a pc admin web project based on vue.js2.*
 
-# y
-
-> a online learning systerm
+# description
+a online learning systerm
 
 # webpack
 
@@ -28,15 +27,15 @@ npm run build --report
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 
-##目录说明
+## 目录说明
 
-#./src/assets/  存放临时静态资源，不会参与编译 
+# ./src/assets/  存放临时静态资源，不会参与编译 
 
-#./src/modules/  模块
+# ./src/modules/  模块
 
-#./src/modules/xxx/components/   存放模块下组件
+# ./src/modules/xxx/components/   存放模块下组件
 
-#./src/router/ 路由配置
+# ./src/router/ 路由配置
 
-#./static/ 需要参与编译的静态资源文件
+# ./static/ 需要参与编译的静态资源文件
 
