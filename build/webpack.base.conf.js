@@ -4,7 +4,7 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
-function resolve(dir) {
+function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -48,15 +48,24 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: 'babel-loader?cacheDirectory',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        include: [resolve('src/icons')],
+        options: {
+          symbolId: 'icon-[name]'
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
+        exclude: [resolve('src/icons')],
         options: {
           limit: 10000,
-          name: utils.assetsPath('images/[name].[hash:7].[ext]')
+          name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
       {
@@ -64,7 +73,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('medias/[name].[hash:7].[ext]')
+          name: utils.assetsPath('media/[name].[hash:7].[ext]')
         }
       },
       {

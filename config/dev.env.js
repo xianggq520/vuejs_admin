@@ -1,9 +1,5 @@
-'use strict'
-const merge = require('webpack-merge')
-const prodEnv = require('./prod.env');
-
-module.exports = merge(prodEnv, {
+module.exports = {
   NODE_ENV: '"development"',
-  baseURL: '"http://admin.test.moxueyuan.net/"',
-  version: '"1.0.0"'
-})
+  ENV_CONFIG: '"dev"',
+  BASE_API: '"https://api-dev"'
+}
