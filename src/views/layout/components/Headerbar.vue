@@ -2,7 +2,6 @@
   <header>
     <el-menu class="navbar" mode="horizontal">
       <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>
-      {{pendings.length + "aa"}}
       <div class="right-menu">
 
         <error-log class="errLog-container right-menu-item"></error-log>
