@@ -3,7 +3,7 @@
 
     <Headerbar class="headerbar-container"></Headerbar>
 
-    <Sidebar class="sidebar-container"></Sidebar>
+    <Asidebar class="sidebar-container"></Asidebar>
 
     <div class="main-container">
 
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-  import { Headerbar, Sidebar, Contentview, Blankbar } from "./components";
+  import { Headerbar, Asidebar, Contentview, Blankbar } from "./components";
   import Breadcrumb from "@/components/Breadcrumb";
 
   export default {
@@ -28,7 +28,7 @@
     components: {
       Breadcrumb,
       Headerbar,
-      Sidebar,
+      Asidebar,
       Contentview,
       Blankbar
     },

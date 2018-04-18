@@ -2,7 +2,7 @@
   <aside>
     <scroll-bar>
       <el-menu mode="vertical" :default-active="$route.path" :collapse="isCollapse">
-        <sidebar-item :routes="permission_routers"></sidebar-item>
+        <aside-menu :routes="permission_routers"></aside-menu>
       </el-menu>
     </scroll-bar>
   </aside>
@@ -10,11 +10,12 @@
 
 <script>
   import { mapGetters } from "vuex";
-  import SidebarItem from "./SidebarItem";
+  import AsideMenu from "./AsideMenu.vue";
   import ScrollBar from "@/components/ScrollBar";
 
   export default {
-    components: { SidebarItem, ScrollBar },
+    name:"asidebar",
+    components: { AsideMenu, ScrollBar },
     computed: {
       ...mapGetters(["permission_routers", "sidebar"]),
       isCollapse() {
