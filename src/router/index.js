@@ -52,8 +52,13 @@ export const constantRouterMap = [
       component: _import('documentation/index'),
       name: 'documentation',
       meta: { title: 'documentation', icon: 'documentation', noCache: true }
+    }, {
+      path: 'menu',
+      component: _import('menu/index'),
+      name: 'menu',
+      meta: { title: 'menu', icon: 'documentation', noCache: true }
     }]
-  }
+  } 
 ]
 
 export default new Router({
