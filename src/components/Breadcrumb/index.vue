@@ -1,9 +1,9 @@
 <template>
   <el-breadcrumb class="app-breadcrumb" separator="/">
     <transition-group name="breadcrumb" tag="p" class="clearfix">
-      <el-breadcrumb-item v-for="(item,index)  in levelList" :key="item.path" v-if="item.meta.title">
-        <span v-if="item.redirect==='noredirect'||index==levelList.length-1" class="no-redirect">{{generateTitle(item.meta.title)}}</span>
-        <router-link v-else :to="item.redirect||item.path">{{generateTitle(item.meta.title)}}</router-link>
+      <el-breadcrumb-item v-for="(item,index) in livedBreadcrumbPaths" :key="item.path" v-if="item.meta.title">
+        <span v-if="item.redirect === 'noredirect' || index == livedBreadcrumbPaths.length - 1" class="no-redirect">{{generateTitle(item.meta.title)}}</span>
+        <router-link v-else :to="item.redirect || item.path">{{generateTitle(item.meta.title)}}</router-link>
       </el-breadcrumb-item>
     </transition-group>
   </el-breadcrumb>
@@ -18,7 +18,7 @@
     },
     data() {
       return {
-        levelList: null
+        livedBreadcrumbPaths: []
       };
     },
     watch: {
@@ -36,7 +36,7 @@
             matched
           );
         }
-        this.levelList = matched;
+        this.livedBreadcrumbPaths = matched;
       }
     }
   };
