@@ -105,8 +105,8 @@
       openMenu(e, tag) {
         this.visible = true;
         this.selectedTag = tag;
-        this.left = e.clientX;
-        this.top = e.clientY;
+        this.left = e.clientX + 3;
+        this.top = e.clientY + 1;
       },
       closeMenu() {
         this.visible = false;
@@ -160,7 +160,6 @@
       z-index: 2;
       position: absolute;
       list-style-type: none;
-      padding: 5px 0;
       border-radius: 4px;
       font-size: 12px;
       font-weight: 400;
@@ -171,7 +170,8 @@
         padding: 7px 16px;
         cursor: pointer;
         &:hover {
-          background: #eee;
+          background: #ecf5ff;
+          color: #409EFF;
         }
       }
     }
