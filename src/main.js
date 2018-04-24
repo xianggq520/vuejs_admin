@@ -2,10 +2,17 @@ import Vue from 'vue'
 
 import 'normalize.css/normalize.css'// A modern alternative to CSS resets
 
+/* 引入整个element-ui方式*/
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'element-ui/lib/theme-chalk/display.css' // 控制元素显示和隐藏
 
 import '@/styles/index.scss' // global css
+
+/* 按需引入element-ui方式*/
+//import { Button } from "element-ui";
+//Vue.prototype.$ELEMENT = { size: 'small' };
+//Vue.use(Button);
 
 import App from './App'
 import router from './router'
@@ -20,7 +27,7 @@ import './mock' // simulation data
 import * as filters from './filters' // global filters
 
 Vue.use(Element, {
-  size: 'medium', // set element-ui default size
+  size: 'small', // set element-ui default size
   i18n: (key, value) => i18n.t(key, value)
 })
 

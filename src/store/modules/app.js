@@ -9,7 +9,6 @@ let calClient = (function windowResizeHandler() {
   return function () {
     client.newheight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     client.step = client.newheight - client.oldheight;
-    console.log("old:" + client.oldheight, "new:" + client.newheight, "step:" + client.step);
     client.oldheight = client.newheight;
     return client;
   };

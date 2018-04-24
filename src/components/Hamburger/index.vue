@@ -10,10 +10,8 @@
         p-id="1694"></path>
     </svg>
     <a href="#" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <!-- <span class="logo-mini"><b>A</b>LT</span> -->
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <img class="logo-img" src="static/images/logo.png" alt="logo">
     </a>
   </div>
 </template>
@@ -34,19 +32,28 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .hamburger {
   display: inline-block;
-  cursor: pointer;
   width: 20px;
   height: 20px;
   transform: rotate(90deg);
   transition: .38s;
   transform-origin: 50% 50%;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 .hamburger.is-active {
   transform: rotate(0deg);
 }
+
+.logo {
+  display: inline-block;
+  .logo-img {
+    height: 35px;
+    vertical-align: middle;
+  }
+}
+
 </style>
