@@ -6,6 +6,7 @@ const config = require('../config')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
@@ -26,8 +27,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   // these devServer options should be customized in /config/index.js
   devServer: {
     clientLogLevel: 'warning',
-    historyApiFallback: true,
+    //historyApiFallback: true,
+    historyApiFallback: {
+      rewrites: [
+        { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
+      ],
+    },
     hot: true,
+    contentBase: false, // since we use CopyWebpackPlugin.
     compress: true,
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
@@ -58,6 +65,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       title: 'vue-element-admin',
       path: config.dev.assetsPublicPath + config.dev.assetsSubDirectory
     }),
+    // copy custom static assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../static'),
+        to: config.dev.assetsSubDirectory,
+        ignore: ['.*']
+      }
+    ]) 
   ]
 })
 
