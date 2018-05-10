@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 const _import = require('./_import_' + process.env.NODE_ENV)
-// in development-env not use lazy-loading, because lazy-loading too many pages will cause webpack hot update too slow. so only in production use lazy-loading;
-// detail: https://panjiachen.github.io/vue-element-admin-site/#/lazy-loading
+// in development-env not use lazy-loading, because lazy-loading too many pages will cause webpack hot update too slow. 
+// so only in production use lazy - loading;
 
 Vue.use(Router)
 
 /* Layout */
 import Layout from '../views/layout'
 
-/** note: submenu only apppear when children.length>=1
-*   detail see  https://panjiachen.github.io/vue-element-admin-site/#/router-and-nav?id=sidebar
+/** 
+ * note: submenu only apppear when children.length>=1   
 **/
 
 /**
@@ -21,7 +21,7 @@ import Layout from '../views/layout'
 * redirect: noredirect           if `redirect:noredirect` will no redirct in the breadcrumb
 * name:'router-name'             the name is used by <keep-alive> (must set!!!)
 * meta : {
-    roles: ['admin','editor']     will control the page roles (you can set multiple roles)
+    roles: ['admin','editor']    will control the page roles (you can set multiple roles)
     title: 'title'               the name show in submenu and breadcrumb (recommend set)
     icon: 'svg-name'             the icon show in the sidebar,
     noCache: true                if true ,the page will no be cached(default is false)
@@ -32,16 +32,21 @@ export const constantRouterMap = [
   { path: '/authredirect', component: _import('login/authredirect'), hidden: true },
   { path: '/404', component: _import('errorPage/404'), hidden: true },
   { path: '/401', component: _import('errorPage/401'), hidden: true },
-  {
+  /* {
     path: '',
     component: Layout,
-    redirect: 'home',
+    redirect: 'welcome',
     children: [{
-      path: 'home',
+      path: 'welcome',
       component: _import('home/index'),
-      name: 'home',
-      meta: { title: 'home', icon: 'dashboard', noCache: true }
+      name: 'welcome',
+      meta: { title: 'welcome', icon: 'documentation'}
     }],
+    hidden: true
+  }, */
+  {
+    path: '',
+    redirect: '/dashboard',
     hidden: true
   },
   {
@@ -54,18 +59,7 @@ export const constantRouterMap = [
       name: 'dashboard',
       meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
     }]
-  },
-  {
-    path: '/documentation',
-    component: Layout,
-    redirect: '/documentation/index',
-    children: [{
-      path: 'index',
-      component: _import('documentation/index'),
-      name: 'documentation',
-      meta: { title: 'documentation', icon: 'documentation', noCache: true }
-    }]
-  }
+  } 
 ]
 
 export default new Router({
@@ -75,24 +69,6 @@ export default new Router({
 })
 
 export const asyncRouterMap = [
-  {
-    path: "/course",
-    component: Layout,
-    redirect: "noredirect",
-    name: "course",
-    meta: { title: 'course', icon: 'documentation', noCache: true },
-    children: [{
-      path: "list",
-      component: _import('course/List'),
-      name: "list",
-      meta: { title: "list" }
-    }, {
-      path: "add",
-      component: _import('course/Add'),
-      name: "add",
-      meta: { title: "add" }
-    }]
-  },
   {
     path: '/permission',
     component: Layout,
@@ -109,19 +85,6 @@ export const asyncRouterMap = [
       }
     }]
   },
-
-  {
-    path: '/icon',
-    component: Layout,
-    redirect: '/icon/index',
-    children: [{
-      path: 'index',
-      component: _import('svg-icons/index'),
-      name: 'icons',
-      meta: { title: 'icons', icon: 'icon', noCache: true }
-    }]
-  },
-
   {
     path: '/components',
     component: Layout,
@@ -142,7 +105,8 @@ export const asyncRouterMap = [
       { path: 'sticky', component: _import('components-demo/sticky'), name: 'sticky-demo', meta: { title: 'sticky' } },
       { path: 'count-to', component: _import('components-demo/countTo'), name: 'countTo-demo', meta: { title: 'countTo' } },
       { path: 'mixin', component: _import('components-demo/mixin'), name: 'componentMixin-demo', meta: { title: 'componentMixin' } },
-      { path: 'back-to-top', component: _import('components-demo/backToTop'), name: 'backToTop-demo', meta: { title: 'backToTop' } }
+      { path: 'back-to-top', component: _import('components-demo/backToTop'), name: 'backToTop-demo', meta: { title: 'backToTop' } },
+      { path: 'icons', component: _import('svg-icons/index'), name: 'icons', meta: { title: 'icons', icon: 'icon'}} 
     ]
   },
 
@@ -207,7 +171,8 @@ export const asyncRouterMap = [
       { path: 'create-form', component: _import('form/create'), name: 'createForm', meta: { title: 'createForm', icon: 'table' } },
       { path: 'edit-form', component: _import('form/edit'), name: 'editForm', meta: { title: 'editForm', icon: 'table' } },
       { path: 'layout', component: _import('form/Layout'), name: 'layout', meta: { title: '布局', icon: 'table' } },
-      { path: 'inputs', component: _import('form/inputs'), name: 'inputs', meta: { title: '表单元素' } }
+      { path: 'inputs', component: _import('form/inputs'), name: 'inputs', meta: { title: '表单元素', icon: 'example' } },
+      { path: 'add-form', component: _import('course/Add'), name: 'addForm', meta: { title: 'add', icon: 'form' } },
     ]
   },
 
