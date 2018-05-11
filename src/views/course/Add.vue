@@ -236,7 +236,7 @@
           this.$refs[formName].resetFields();
         }
       }
-    };
+    }
 </script>
 <style lang="scss" scoped>
     .form-wrap {

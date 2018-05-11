@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  import { mapGetters } from "vuex";
-  import AsideMenu from "./AsideMenu.vue";
-  import ScrollBar from "@/components/ScrollBar";
+  import { mapGetters } from "vuex"
+  import AsideMenu from "./AsideMenu.vue"
+  import ScrollBar from "@/components/ScrollBar"
 
   export default {
     name:"asidebar",
