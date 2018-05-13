@@ -71,6 +71,7 @@
     .scroll-wrapper {
       position: absolute;
       width: 100% !important;
+     
     }
   }
 </style>

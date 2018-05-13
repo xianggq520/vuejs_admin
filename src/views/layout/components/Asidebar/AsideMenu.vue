@@ -64,6 +64,9 @@
   };
 </script>
 <style lang="scss" scoped>
+.menu-wrapper {
+  padding: 0 0 28px 0;
+}
 
 </style>
 
