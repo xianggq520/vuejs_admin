@@ -106,7 +106,8 @@ export const asyncRouterMap = [
       { path: 'count-to', component: _import('components-demo/countTo'), name: 'countTo-demo', meta: { title: 'countTo' } },
       { path: 'mixin', component: _import('components-demo/mixin'), name: 'componentMixin-demo', meta: { title: 'componentMixin' } },
       { path: 'back-to-top', component: _import('components-demo/backToTop'), name: 'backToTop-demo', meta: { title: 'backToTop' } },
-      { path: 'icons', component: _import('svg-icons/index'), name: 'icons', meta: { title: 'icons', icon: 'icon'}} 
+      { path: 'icons', component: _import('svg-icons/index'), name: 'icons', meta: { title: 'icons', icon: 'icon'}},
+      { path: 'buttons', component: _import('buttons/index'), name: 'buttons', meta: { title: 'buttons', icon: 'icon'}} 
     ]
   },
 
